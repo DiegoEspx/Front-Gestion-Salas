@@ -1,0 +1,24 @@
+{
+    "navigationFallback": {
+        "rewrite": "index.html",
+        "exclude": [
+            "/images/*.{png,jpg,gif}",
+            "/css/*",
+            "/*.css"
+        ]
+    },
+    "routes": [
+        {
+            "route": "/api/*",
+            "allowedRoles": ["anonymous"]
+        }
+    ],
+    "globalHeaders": {
+        "Content-Security-Policy": "default-src 'self' https://frontendgestionsalas.azurewebsites.net; img-src 'self' data:; media-src 'none'; script-src 'self' https://frontendgestionsalas.azurewebsites.net; style-src 'self' https://frontendgestionsalas.azurewebsites.net; font-src 'self';"
+    },
+    "mimeTypes": {
+        ".json": "application/json",
+        ".woff": "font/woff",
+        ".woff2": "font/woff2"
+    }
+}
