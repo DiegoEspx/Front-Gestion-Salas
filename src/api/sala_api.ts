@@ -3,7 +3,7 @@ import axios from 'axios';
 //Aqui se añaden las funciones, ej: crear, eliminar, actualizar etc, funciones
 
 const salasApi = axios.create({
-    baseURL: 'http://127.0.0.1:8000/api/Salas/'
+    baseURL: 'https://back-gestion-sala.azurewebsites.net/api/Salas/'
 });
 
 interface Sala {
