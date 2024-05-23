@@ -2,7 +2,7 @@
     "routes": [
       {
         "route": "/api/*",
-        "rewrite": "https://tu-backend.azurewebsites.net/api/*"
+        "rewrite": "https://back-gestion-sala.azurewebsites.net/api/*"
       },
       {
         "route": "/*",
