@@ -24,10 +24,13 @@ export function SalaList() {
     }, []);
     
     return (
-        <div>
+        <main className="flex justify-center ">
+            <section className="grid grid-cols-4 gap-10 p-3 ">
             {salas.map((sala) => (
                 <SalaCard key={sala.id} sala={sala} />
             ))}
-        </div>
+            </section>
+        </main>
+        
     );
 }

@@ -40,22 +40,37 @@ export function SalaDetails() {
     };
 
     return (
-        <div>
-            <h1>Detalles de la Sala</h1>
-            <p><strong>ID:</strong> {salaDetails.id}</p> {/* Muestra el ID de la sala */}
-            <p><strong>Nombre:</strong> {salaDetails.nombre}</p>
-            <p><strong>Cantidad de Computadoras:</strong> {salaDetails.cantidad_computadoras}</p>
-            <p><strong>Computadoras Ocupadas:</strong> {salaDetails.ocupadas}</p>
-            <p><strong>Computadoras Libres:</strong> {salaDetails.libres}</p>
-            <h2>Computadoras:</h2>
-            <ul>
-                {salaDetails.computadoras.map((comp, index) => (
-                    <li key={index}>
-                        Computadora {comp.numero}: {comp.ocupado ? 'Ocupada' : 'Libre'}
-                    </li>
-                ))}
-            </ul>
-            <button onClick={handleEdit}>Editar</button>
+        <main className="flex justify-center">
+    <div className="bg-crear mt-16 py-8 px-9 box rounded-3xl  relative text-white">
+        <div className="bg-detalles text-center text-3xl font-bold py-4 rounded-3xl absolute top-0 left-0 w-full">
+            <h1>Detalles de la Sala {salaDetails.id}</h1>
         </div>
+        <div className="grid grid-cols-2 gap-7 mt-16 mb-3 text-lg">
+            <div className="text-left my-6">
+                <p><strong>Nombre:</strong> {salaDetails.nombre}</p>
+                <p><strong>Cantidad de Computadoras:</strong> {salaDetails.cantidad_computadoras}</p>
+                <p><strong>Computadoras Ocupadas:</strong> {salaDetails.ocupadas}</p>
+                <p><strong>Computadoras Libres:</strong> {salaDetails.libres}</p>
+            </div>
+            <div className="text-left ">
+                <h2 className="font-bold ml-10"> Computadoras:</h2>
+                <ul>
+                    {salaDetails.computadoras.map((comp, index) => (
+                        <li key={index}>
+                            <strong>Computadora {comp.numero}:</strong> {comp.ocupado ? 'Ocupada' : 'Libre'}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+        <button 
+            onClick={handleEdit} 
+            className="bg-boton text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline ml-16">
+            Editar
+        </button>
+    </div>
+</main>
+
+
     );
 }

@@ -23,35 +23,44 @@ export function ComputadoraFormPage() {
     });
 
     return (
-        <div>
-            <main>
-                <form onSubmit={onSubmit}>
-                    <div>
+        <div className="flex justify-center">
+            <main className="bg-crear mt-6 rounded-3xl py-16 px-64 box ">
+                <form onSubmit={onSubmit} className="flex flex-col items-center" >
+                    <div className=" text-center mb-3 text-2xl font-bold text-white ">
+                        <h1>ID de Sala</h1>
+                    </div>
+                    <div className="flex flex-col items-center" >
                         <input 
+                            className=" text-lg text-black rounded-xl px-4 py-2  focus:outline-none"
                             type="number" 
-                            placeholder="ID de la Sala"
+                            placeholder="ID Sala"
                             {...register("sala", { required: "El ID de la sala es obligatorio" })}
                         />
-                        {errors.sala && <span>Este campo es requerido</span>}
+                        {errors.sala && <span className="text-black font-extrabold my-2">Este campo es requerido</span>}
                     </div>
-                    <div>
+                    <div className=" text-center my-3 text-2xl font-bold text-white ">
+                        <h1>Numero de Computadora</h1>
+                    </div>
+                    <div className="flex flex-col items-center">
                         <input 
+                            className=" text-lg text-black rounded-xl px-4 py-2 mb-8 focus:outline-none"
                             type="number" 
-                            placeholder="Número de Computadora"
+                            placeholder="Número"
                             {...register("numero", { required: "El número de la computadora es obligatorio" })}
                         />
-                        {errors.numero && <span>Este campo es requerido</span>}
+                        {errors.numero && <span className="text-black font-extrabold">Este campo es requerido</span>}
                     </div>
-                    <div>
-                        <label>
+                    <div className="mb-6">
+                        <label className="flex items-center text-white cursor-pointer">
                             <input 
                                 type="checkbox" 
                                 {...register("ocupado")}
+                                className="form-checkbox h-5 w-5 text-blue-600 rounded-full border-2 border-blue-600 focus:outline-none focus:border-blue-400 transition duration-300"
                             />
-                            Ocupado
+                            <span className="ml-2 text-lg">Ocupado</span>
                         </label>
                     </div>
-                    <button type="submit">Guardar</button>
+                    <button type="submit" className="bg-boton text-white font-bold mt-3 py-3 px-4 rounded-full text-lg">Guardar</button>
                 </form>
             </main>
         </div>

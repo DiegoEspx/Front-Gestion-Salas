@@ -51,33 +51,39 @@ export function SalasFormPage() {
     });
 
     return (
-        <div>
-            <main>
-                <form onSubmit={onSubmit}>
-                    <div>
+        <div className="flex justify-center">
+            <main className="bg-crear mt-10 rounded-3xl py-24 px-64 box ">
+                <div className=" text-center mb-10 text-4xl font-bold text-white ">
+                    <h1>Nombre Para la Sala</h1>
+                </div>
+                <form onSubmit={onSubmit} className="flex flex-col items-center">
                         <input 
+                            className=" text-lg text-black rounded-xl px-10 py-2 mb-4 focus:outline-none"
                             type="text" 
                             placeholder="Nombre Sala"
                             autoComplete="off"
-                            {...register("nombreSala", { required: "El nombre de la sala es obligatorio" })}
+                        {...register("nombreSala", { required: "El nombre de la sala es obligatorio" })}
                         />
-                        {errors.nombreSala && <span>Este campo es requerido</span>}
-                    </div>
-                    <button type="submit">Guardar</button>
+                        {errors.nombreSala && <span className="text-black font-extrabold">Este campo es requerido</span>}
+                        <button type="submit" className= "bg-boton text-white font-bold mt-3 py-3 px-4 rounded-full text-lg">
+                            Guardar
+                        </button>
                 </form>
-                {params.id && (
-                    <button onClick={async() => {
-                        const aceptar = window.confirm('¿Estás seguro?');
-                        if (aceptar) {
-                            try {
-                                await deleteSala(params.id!);
-                                navigate('/salas');
-                            } catch (error) {
-                                console.error("Error al eliminar la sala:", error);
+                <div className="flex justify-center items-center mt-3">
+                    {params.id && (
+                        <button onClick={async() => {
+                            const aceptar = window.confirm('¿Estás seguro?');
+                            if (aceptar) {
+                                try {
+                                    await deleteSala(params.id!);
+                                    navigate('/salas');
+                                } catch (error) {
+                                    console.error("Error al eliminar la sala:", error);
+                                }
                             }
-                        }
-                    }}>Eliminar</button>
-                )}
+                        }} className="bg-boton text-white font-bold mt-1 py-3 px-4 rounded-full text-lg">Eliminar</button>
+                    )}
+                </div>
             </main>
         </div>
     );

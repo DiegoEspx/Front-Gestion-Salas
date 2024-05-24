@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-card:hover {
+    background: linear-gradient(180deg, #f05286, #6327b7d0);
+}
+.bg-compu {
+    background: #cac9ff56;
+}
+.bg-card {
+    background: #cac9ff56;
+}
+.bg-nav:hover {
+    background: linear-gradient(180deg, #DA2864, #480d9b);
+}
+.bg-nav {
+    background: linear-gradient(180deg, #0c53b7, #741bc7);
+}
+.bg-crear {
+    background: linear-gradient(180deg, #7e07ad60, #da647460); /* Los dos últimos dígitos representan la transparencia (alpha) */
+}
+.bg-detalles {
+    background: linear-gradient(180deg, #12dbac, #b70aca);
+}
+
+.bg-boton:hover{
+    background: linear-gradient(180deg, #0c53b7, #741bc7);
+}
+.bg-boton{
+    background: linear-gradient(180deg, #DA2864, #480d9b);
+}
+
+/*SOMBRA CUADRO*/
+.box {
+    border-radius: 20px; 
+    box-shadow: 13px 10px 7px rgba(0, 0, 0, 0.2);
+}
+
+
+/* BARRA DE NAVEGACIÓN */
+.nav-link {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.nav-link:hover {
+    transform: scale(1.2);
+}
+
+/* ZOOM CARTAS*/
+.nav-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-card:hover {
+    transform: scale(1.12);
+}
+
+/* COLOR LETRA */
+.text:hover {
+    background: linear-gradient(180deg, #DA2864, #480d9b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/*FONDO DE LA APP*/
+.bg-fondo {
+    background-image: url(./img/1.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(1); /* Reducir el brillo al 70% */
+}

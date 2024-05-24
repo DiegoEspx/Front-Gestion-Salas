@@ -27,14 +27,14 @@ export function ComputadoraCard({ computador }: ComputadorCardProps) {
     };
 
     return (
-        <div className=" bg-green-200">
+        <div className=" mt-5 p-3 rounded-xl cursor-pointer bg-compu box text-center text-lg text-white">
             <h1><strong>Sala:</strong> {computador.nombre_sala}</h1> 
-            <p>Número de Computadora: {computador.numero}</p>
-            <p>Estado: {ocupado ? "Ocupado" : "Libre"}</p>  
-            <button onClick={handleChangeEstado}>
+            <p><strong>Número de Computadora:</strong> {computador.numero}</p>
+            <p><strong>Estado:</strong> {ocupado ? "Ocupado" : "Libre"}</p>  
+            <button onClick={handleChangeEstado}  className=" text-white font-bold py-3 px-2 bg-boton rounded-full
+             my-3 text-sm">
                 Cambiar estado
             </button>
-            <hr />
         </div>
     );
 }

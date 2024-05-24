@@ -26,11 +26,14 @@ export function ComputadorList() {
     }, []);
     
     return (
-        <div>
+        <main className="flex justify-center ">
+            <div className="grid grid-cols-4 gap-10 p-3 ">
             {computadores.map((computador) => (
                 <ComputadoraCard key={computador.id} computador={computador} />
             ))}
-        </div>
+            </div>
+        </main>
+        
         
     );
 }

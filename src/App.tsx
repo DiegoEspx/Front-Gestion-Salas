@@ -12,10 +12,10 @@ import { Toaster } from 'react-hot-toast';
 function App() {
   return (
     <BrowserRouter>
-      <main >
+      <main className=' min-h-screen flex flex-col bg-slate bg-fondo'>
         <Navigation />
         <section>
-          <section className=' bg-slate-400'>
+          <section>
             <Routes>
               {/* Url para mostrar las salas */}
               <Route path='/' element={<Navigate to="/salas" />} />

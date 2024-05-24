@@ -12,15 +12,13 @@ export function SalaCard({ sala }: SalaCardProps) {
     const navigate = useNavigate();
     return (
         <div 
-            className="bg-orange-800 p-4 rounded-lg shadow-md cursor-pointer hover:bg-orange-700"
-            style={{ background: '#' }}
+            className=" mt-10 p-5 rounded-xl shadow-md box cursor-pointer bg-card text-center bg-slate-100 text-xl py-10 nav-card text-white "
             onClick={() => {
                 navigate('/detalle-sala/' + sala.id);
             }}
         >
-            <h1>Sala: {sala.nombre}</h1>
-            <p>Computadores: {sala.cantidad_computadoras}</p>  
-            <hr />
+            <h1><strong>Sala:</strong> {sala.nombre}</h1>
+            <p><strong>Computadores:</strong> {sala.cantidad_computadoras}</p>  
         </div>
     );
 }
